@@ -15,15 +15,15 @@ How to Run
 ----------
 Start server with:
 
-  ruby server.rb
+`ruby server.rb`
 
 Then visit this in your browser:
 
-  http://localhost:2345
+`http://localhost:2345`
 
 or curl:
 
-  curl -i http://localhost:2345
+`curl -i http://localhost:2345`
 
 
 TO DO
