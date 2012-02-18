@@ -9,7 +9,6 @@ loop do
 
   headers = [
     "HTTP/1.1 200 OK",
-    "From: matt@ruten.ca",
     "User-Agent: Matt",
     "Content-Type: text/html",
     "Content-Length: #{html.length}",
