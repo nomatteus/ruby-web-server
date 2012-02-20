@@ -39,23 +39,22 @@ loop do
   puts "error, file type not supported" unless valid_file_extensions.include?(file_extension)
 
   # check the file is readable by opening it
-
-  # transmit the HTTP header to the browser
-
-  # transmit the file contents to the browser
-
-
-  html = IO.read("./#{filename}")
+  if File.exist?(filename)
+    contents = IO.read("./#{filename}")
+    status = "200 OK"
+  else
+    contents = "<h1>404 Not Found</h1><p>:(</p>"
+    status = "404 Not OK"
+  end
 
   headers = [
-    "HTTP/1.1 200 OK",
+    "HTTP/1.1 #{status}",
     "Content-Type: text/html",
-    "Content-Length: #{html.length}",
+    "Content-Length: #{contents.length}",
     "\r\n"
   ].join("\r\n")
-  client.write headers 
-  
-  client.puts html
 
+  client.write headers 
+  client.puts contents
   client.close
 end
