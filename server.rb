@@ -44,7 +44,7 @@ loop do
     status = "200 OK"
   else
     contents = "<h1>404 Not Found</h1><p>:(</p>"
-    status = "404 Not OK"
+    status = "404 Not Found"
   end
 
   headers = [
